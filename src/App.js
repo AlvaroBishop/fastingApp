@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import Content from "./shared/layout/Content";
+import {element} from 'prop-types';
+import { Header } from "./shared/layout/Header";
 import './App.css';
+import { useEffect } from "react";
 
-function App() {
+const time = new Date()
+const html = document.querySelector('html');
+if(time.getHours() % 12 < 12 )
+    html.classList.remove('dark');
+else
+    html.classList.add('dark');
+
+function App(props) {
+  
+
+  useEffect(() => {
+    const html = document.querySelector('html');
+
+    const time = new Date();
+    
+    
+   
+    time.getHours() % 12 && html.classList.add('dark');
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Content>
+        {props.children}
+      </Content>
     </div>
   );
 }
 
+App.propTypes = {
+  children: element.isRequired,
+}
 export default App;

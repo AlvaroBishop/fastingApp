@@ -1,0 +1,156 @@
+.Clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*alineamos horizontalmente*/
+    justify-content: center; /*alineamos verticalmente*/
+    height: 90vh; /*tomamos el 100% de la pantalla*/
+    overflow: hidden; /*escondemos todo lo que se salga de su lugar*/
+    margin: 0;
+}
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0px 10px 70px rgb(var(--primary-color));
+    margin: 2rem 0;
+}
+
+
+.clock span {
+    position: absolute;
+    inset: 10px;
+    color: rgb(var(--primary-color));
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+    z-index: 1;
+}
+
+.clock span b{
+    font-size: 1.6rem;
+    opacity: .5;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+    z-index: 10;
+}
+.clock span b.start{
+    color: green;
+    border-radius: 50%;
+    opacity: 1;
+    font-size: 1.7rem;
+}
+.clock span b.end{
+    color: red;
+    border-radius: 50%;
+    opacity: 1;
+    font-size: 1.7rem;
+}
+
+
+
+.needle {
+    background-color: rgb(var(--primary-color));
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    height: 70px;
+    width: 2px;
+    transform-origin: bottom center;
+    
+}
+
+.needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 105px;
+}
+.needle.second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 105px;
+    background-color: #e74c3c;
+}
+
+.center-point {
+    height: 10px;
+    width: 10px;
+    background-color: #e74c3c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.center-point::after {
+    content: '';
+    height: 5px;
+    width: 5px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.dark .center-point::after {
+    background-color: white;
+  
+}
+
+.time {
+    font-size: 60px;
+    margin-top: 2rem;
+}
+
+.date {
+    color: #aaa;
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+
+
+
+.date .circle {
+    background-color: rgb(var(--primary-color));
+    color: rgb(var(--secondary-color));
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    transition: all 0.4s ease-in;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.inputs{
+    margin: 5rem 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.inputs input{
+    display: block;
+    margin: 0 2rem;
+}
+
+.inputs label {
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+
