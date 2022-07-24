@@ -50,6 +50,12 @@ nav {
 a {
     text-decoration: none;
     color: rgb(var(--secondary-color));
+    font-size: 2rem;
+}
+
+a:hover {
+    color: green;
+    transform: scale(.99) rotate(3deg) ;
 }
 
 .logo {

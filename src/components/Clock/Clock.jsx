@@ -72,21 +72,21 @@ export const Clock = () => {
     const inputHourValue = target.value.split(':')[0];
     const clockHour = document.querySelector(`#n${inputHourValue%12}`)
     
-    console.log(clockHour);
     
     if(start)
     {
       if(prevStartHour)
       {
+        console.log(parseInt(prevStartHour.innerHTML));
         if(prevStartHour.classList.contains('start'))
         {
           prevStartHour.classList.remove('start');
-          prevStartHour.innerHTML = `${inputHourValue%12}`
+          prevStartHour.innerHTML = `${parseInt(prevStartHour.innerHTML)}`
         }
         if(prevStartHour.classList.contains('end'))
         {
           prevStartHour.classList.remove('end');
-          prevStartHour.innerHTML = `${inputHourValue%12}`
+          prevStartHour.innerHTML = `${parseInt(prevStartHour.innerHTML)}`
         }
       }
       clockHour.classList.add('start');
@@ -101,12 +101,12 @@ export const Clock = () => {
         if(prevEndHour.classList.contains('start'))
         {
           prevEndHour.classList.remove('start');
-          prevEndHour.innerHTML = `${inputHourValue%12}`
+          prevEndHour.innerHTML = `${parseInt(prevEndHour.innerHTML)}`
         }
         if(prevEndHour.classList.contains('end'))
         {
           prevEndHour.classList.remove('end');
-          prevEndHour.innerHTML = `${inputHourValue%12}`
+          prevEndHour.innerHTML = `${parseInt(prevEndHour.innerHTML)}`
         }
       }
       (inputHourValue < 12 ) ? clockHour.innerHTML = `${inputHourValue%12}am` : clockHour.innerHTML = `${inputHourValue%12}pm`
