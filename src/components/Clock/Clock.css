@@ -140,14 +140,25 @@
 
 .inputs{
     margin: 5rem 0 0 0;
-    display: flex;
-    justify-content: space-between;
+}
+@media (min-width: 700px) {
+    .inputs{
+        display: flex;
+    }
 }
 .inputs input{
     display: block;
-    margin: 0 2rem;
+    margin: 1rem 2rem;
+    width: 20rem;
 }
 
+@media (min-width: 700px) {
+    .inputs input{
+        display: block;
+        margin: 0 2rem;
+        width: 15rem;
+    }
+}
 .inputs label {
     font-weight: 600;
     font-size: 2rem;

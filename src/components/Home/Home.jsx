@@ -17,7 +17,9 @@ export const Home = () => {
                 <p>Intermittent fasting is when you alternate between periods of eating and fasting. This type of eating is often described as “patterns” or “cycles” of fasting.</p>
                 <p>Intermittent fasting isn’t about starving yourself — it’s about cutting way back on calories for short time periods. The belief is that your body becomes satisfied with smaller portions while also reducing cravings for unhealthy snack foods. That is, as long as you maintain a healthy diet while trying it all out.  </p>
               </div>
+              <div className="img">
                 <img src={fastingIMG} alt="intermittent fasting" />
+              </div>
             </div>
         </div>
     </div>

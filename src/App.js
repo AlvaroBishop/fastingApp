@@ -4,12 +4,7 @@ import { Header } from "./shared/layout/Header";
 import './App.css';
 import { useEffect } from "react";
 
-const time = new Date()
-const html = document.querySelector('html');
-if(time.getHours() % 12 < 12 )
-    html.classList.remove('dark');
-else
-    html.classList.add('dark');
+
 
 function App(props) {
   
@@ -21,7 +16,7 @@ function App(props) {
     
     
    
-    time.getHours() % 12 && html.classList.add('dark');
+    time.getHours() % 12 > 12 && html.classList.add('dark');
   }, []);
 
   return (

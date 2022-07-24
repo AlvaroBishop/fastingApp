@@ -143,9 +143,9 @@ export const Clock = () => {
       </div>
       <div className='inputs'>
         <label htmlFor="start">Select Fasting Start Hour</label>
-        <input type='time' id='start' name='start' onChange={(e) => onChange(e, true)} min="1" max="24"/>
+        <input type='time' id='start' name='start' onChange={(e) => onChange(e, true)}/>
         <label htmlFor="end">Select Fasting End Hour</label>
-        <input type='time' id='end' name='end' onChange={(e) => onChange(e, false)} min="1" max="24"/>
+        <input type='time' id='end' name='end' onChange={(e) => onChange(e, false)}/>
 
       </div>
     </div>

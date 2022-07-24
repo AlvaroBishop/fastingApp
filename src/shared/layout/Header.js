@@ -14,6 +14,7 @@ export const Header = () => {
             <div className='nav-links'>
                 <Link to="/">Home</Link>
                 <Link to="/clock">Clock</Link>
+                <Link to="/food">FoodStats</Link>
             </div>
         </nav>
     </header>
